@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Step01_GridSystem.html</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<style>
+		.container-fluid, container{
+			border: 2px dotted red;
+		}
+		.row{
+			border: 1px solid blue;
+		}
+		.row > div{
+			border: 1px solid orange;
+		}
+	</style>
+</head>
+<body>
+<!--  폭넓이(width:)에 따른 다른 입력방법
+		768px			992px			1200px
+extra		|	small 		|	medium 		|	large
+small 		|	device		|	device 		|	device
+device		|				|				|
+			|				|				|
+			|				|				|
+			|				|				|
+xs				sm				md				lg
+phone			tablet 			desktop 		wide desktop
+ -->
+	<!-- 유동형 컨테이너 -->
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-xs-12">.col-xs-12</div>
+	</div>
+	<div class="row">
+	<div class="col-xs-6">.col-xs-6</div>
+	<div class="col-xs-6">.col-xs-6</div>
+	</div>
+
+	<!-- 고정형 컨테이너 -->
+<div class="container">
+	<div class="row">
+	<div class="col-xs-12">.col-xs-12</div>
+	</div>
+	<div class="row">
+	<div class="col-xs-6">.col-xs-6</div>
+	<div class="col-xs-6">.col-xs-6</div>
+	</div>	
+</body>
+</html>
+
+

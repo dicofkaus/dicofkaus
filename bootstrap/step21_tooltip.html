@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Step21_tooltip.html</title>
+	<link rel="stylesheet" href="css/bootstrap.css"/>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>tooltip 테스트</h1>
+	<button class="btn btn-danger" 
+		title="모든 컨텐츠가 삭제 됩니다." id="one">삭제</button>
+	<button class="btn btn-warning my-btn" title="컨텐츠가 수정 됩니다.">수정</button>
+	<button class="btn btn-primary my-btn" title="메세지가 전송 됩니다.">전송</button>
+	<button class="btn btn-primary your-btn" title="메세지가 전송 됩니다.">전송</button>
+	<div class="box"></div>
+</div>
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+	// #one 을 선택해서 tooltip 동작 시키기 
+	$("#one").tooltip();
+	// .my-btn 을 선택해서 tooltip 동작 시키기
+	$(".my-btn").tooltip({
+		placement: "bottom", /* top | right | bottom | left | auto */
+		trigger: "hover" /* hover | focus | hover focus | manual */
+	});
+
+	// .your-btn 을 선택해서 tooptip 을 동작 시켜 보세요.
+	// tooptip 이 뜨는 위치는 오른쪽, 동작 조건은 manual
+	$(".your-btn").tooltip({
+		placement:"right",
+		trigger:"manual"
+	});
+
+	$(".box").on("mouseover", function(){
+		$(".your-btn").tooltip("show");
+	});
+
+	$(".box").on("mouseout", function(){
+		$(".your-btn").tooltip("hide");
+	});
+
+</script>	
+</body>
+</html>
